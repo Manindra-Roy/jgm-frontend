@@ -1,0 +1,152 @@
+/* src/components/ProductGrid.css */
+.products-section {
+    padding: 0 5% 100px;
+    text-align: center;
+    /* The patterned background from your mockup */
+    background-repeat: repeat;
+    background-size: 400px;
+}
+
+/* The dark green Title Banner */
+.section-title-wrapper {
+    display: inline-block;
+    background-color: #216f56; /* Deep green */
+    padding: 10px 50px;
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+/* Adds the little white accent lines on the sides of the banner */
+.section-title-wrapper::before,
+.section-title-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    bottom: 15%;
+    width: 2px;
+    background-color: rgba(255,255,255,0.6);
+}
+.section-title-wrapper::before { left: 15px; }
+.section-title-wrapper::after { right: 15px; }
+
+.section-title {
+    font-family: 'Cinzel Decorative', 'Times New Roman', serif;
+    font-size: 2.5rem;
+    color: white;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* The Grid Layout */
+.product-grid {
+    display: grid;
+    /* Automatically fits 4 columns on desktop, 1 on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* The Product Card */
+.product-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Image Container */
+.product-image-container {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+
+/* The small overlapping JGM logo on the top right */
+.product-badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 2px solid #216f56;
+    z-index: 2;
+}
+
+.product-badge img {
+    width: 45px;
+    height: auto;
+}
+
+.product-name {
+    margin: 10px 0;
+    font-size: 1.4rem;
+    color: #4a0404; /* Deep red-brown text from your mockup */
+    font-family: 'Arial Black', Impact, sans-serif;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.product-price {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #000;
+    margin: 0 0 20px 0;
+    font-family: 'Arial Black', Impact, sans-serif;
+}
+
+/* The Glossy Red Buy Button */
+.buy-btn {
+    background: linear-gradient(180deg, #e74c3c 0%, #a93226 100%);
+    color: white;
+    border: 2px solid #fff;
+    outline: 2px solid #a93226;
+    padding: 10px 35px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 8px rgba(169, 50, 38, 0.4);
+    transition: transform 0.2s;
+    margin-top: auto;
+}
+
+.buy-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .section-title { font-size: 1.8rem; }
+    .product-grid { gap: 30px; }
+}

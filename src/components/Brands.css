@@ -1,0 +1,59 @@
+/* src/components/Brands.css */
+.brands-section {
+    /* The repeating knit pattern from your mockup */
+    background-repeat: repeat;
+    background-size: 400px; /* Adjust this to scale the pattern up or down */
+    padding: 60px 20px 100px;
+    text-align: center;
+    border-top: 5px solid #111812; /* Clean separation from the hero */
+}
+
+.brands-title {
+    font-family: 'Lora', 'Times New Roman', serif;
+    font-size: 3.5rem;
+    color: #1a1a1a;
+    margin-bottom: 60px;
+    font-weight: 500;
+}
+
+.badges-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.brand-badge {
+    background-color: #216f56; /* The deep teal/green from your mockup */
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Arial Black', Impact, sans-serif; /* Thick, heavy text */
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    line-height: 1.1;
+    transition: transform 0.3s ease;
+}
+
+.brand-badge:hover {
+    transform: translateY(-10px);
+}
+
+.badge-zio {
+    font-size: 5rem; /* ZIO is shorter, so the text is much bigger */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .brands-title { font-size: 2.5rem; }
+    .badges-container { gap: 40px; }
+    .brand-badge { width: 200px; height: 200px; font-size: 2rem; }
+    .badge-zio { font-size: 4rem; }
+}

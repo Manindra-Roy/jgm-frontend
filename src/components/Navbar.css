@@ -1,0 +1,171 @@
+/* src/components/Navbar.css */
+.navbar {
+  background-color: #111111;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 50px;
+  /* font-family: 'Times New Roman', Times, serif; */
+  font-family: 'Cinzel Decorative', serif;;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* border-bottom: 2px solid #2ecc71; */
+}
+
+/* The exact sweeping curve from the mockup */
+.logo-container {
+  background-color: #FCF9E8; /* Exact cream color */
+  width: 250px; 
+  height: 140px; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* This creates the massive quarter-circle curve */
+  border-radius: 0 0 160px 0; 
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15px; 
+  padding-right: 20px; 
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
+  z-index: 1001;
+}
+
+.logo-img {
+  height: 100px;
+  width: auto;
+  filter: drop-shadow(0px 3px 4px rgba(0,0,0,0.2));
+}
+
+.nav-center {
+  display: flex;
+  gap: 30px;
+  margin-left: 280px; /* Pushes links past the cream curve */
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #2ecc71;
+}
+
+.nav-right {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.phone-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  color: white;
+  white-space: nowrap;
+}
+
+.join-btn {
+  background-color: #f1c40f;
+  color: #000;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  white-space: nowrap;
+}
+
+.join-btn:hover {
+  transform: scale(1.05);
+  background-color: #f39c12;
+}
+
+.hamburger {
+  display: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1002;
+}
+
+/* Update the bottom of src/components/Navbar.css */
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+  .navbar {
+    padding-right: 20px;
+  }
+  
+  .logo-container {
+    width: 200px;
+    height: 120px;
+    padding-left: 20px;
+  }
+
+  .logo-img {
+    height: 80px;
+  }
+
+  /* Hide desktop links */
+  .nav-center, .nav-right {
+    display: none;
+  }
+
+  /* Show hamburger menu */
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+
+  /* Mobile Dropdown Menu */
+  .mobile-menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    gap: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+    z-index: 999;
+  }
+
+  .mobile-menu .nav-link {
+    font-size: 1.4rem;
+  }
+
+  .mobile-menu .nav-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .logo-container {
+    width: 150px;
+    height: 100px;
+    padding-left: 10px;
+  }
+  .logo-img {
+    height: 60px;
+  }
+}

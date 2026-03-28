@@ -1,0 +1,102 @@
+/* src/components/Hero.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lora:wght@400;500&display=swap');
+
+/* High-Performance, GPU-Accelerated Glide Animation */
+@keyframes glideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-container {
+  width: 100%;
+  height: calc(100vh - 80px); 
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  padding: 0 5%; 
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,20,10,0.9) 0%, rgba(0,20,10,0.4) 60%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  color: white;
+  margin-top: -20px; 
+}
+
+/* Base class applied to all text for hardware acceleration */
+.hero-title, .hero-subtitle, .hero-text {
+  opacity: 0; 
+  /* Forces the browser to use the GPU for these specific properties, eliminating lag */
+  will-change: transform, opacity; 
+  /* The cubic-bezier creates that luxury "fast start, slow finish" glide */
+  animation: glideUpFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-title {
+  font-family: 'Cinzel Decorative', 'Papyrus', serif;
+  font-size: clamp(3rem, 7.5vw, 7.5rem); 
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8); 
+  line-height: 1.1;
+  white-space: nowrap; 
+  animation-delay: 0.1s; /* Starts almost immediately */
+}
+
+.hero-subtitle {
+  font-family: 'Cinzel Decorative', 'Papyrus', serif;
+  font-size: clamp(1.5rem, 3.5vw, 3.5rem); 
+  font-weight: 700;
+  margin: 10px 0 30px 0;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+  white-space: nowrap;
+  animation-delay: 0.4s; /* Waits for the title to appear */
+}
+
+.hero-text {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.1rem, 2vw, 2.2rem); 
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.5;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+  color: #f8f9fa;
+  animation-delay: 0.7s; /* Final element to glide in */
+}
+
+/* --- MOBILE RESPONSIVENESS OVERRIDES --- */
+@media (max-width: 768px) {
+  .hero-container {
+    height: 60vh; 
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title, .hero-subtitle {
+    white-space: normal; /* Allows text to drop to a new line on tiny screens */
+  }
+}

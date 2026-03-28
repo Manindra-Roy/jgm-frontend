@@ -1,0 +1,116 @@
+/* src/pages/ProductsPage.css */
+
+.products-page-container {
+    background-color: #610d0d; /* The deep maroon from your mockup */
+    min-height: 100vh;
+    padding: 60px 5% 100px;
+}
+
+.products-page-grid {
+    display: grid;
+    /* Automatically fits 4 columns on desktop, scales down to 2 or 1 on mobile */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.prod-page-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.prod-page-card:hover {
+    transform: translateY(-8px);
+}
+
+.prod-page-img-container {
+    width: 100%;
+    height: 240px;
+    /* The soft grey gradient background behind the products in your mockup */
+    background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    position: relative;
+}
+
+.prod-page-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Optional: Add the "12+2 SPECIAL OFFER" tag from your mockup */
+.special-offer-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f1c40f;
+    color: #000;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.7rem;
+    padding: 5px 8px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 1.1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.prod-page-title {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 1.3rem;
+    color: #4a0404; /* Dark brownish-red text */
+    text-align: center;
+    margin: 0;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.prod-page-price {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #000;
+    margin: 10px 0 20px 0;
+}
+
+.prod-page-btn {
+    background: linear-gradient(180deg, #e74c3c 0%, #a93226 100%);
+    color: white;
+    border: 2px solid #fff;
+    outline: 2px solid #a93226;
+    padding: 8px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+    margin-top: auto;
+    text-transform: uppercase;
+}
+
+.prod-page-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(180deg, #c0392b 0%, #7b241c 100%);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .products-page-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }
+    .prod-page-img-container { height: 180px; }
+    .prod-page-title { font-size: 1.1rem; }
+    .prod-page-price { font-size: 1.4rem; }
+    .prod-page-btn { padding: 8px 20px; font-size: 0.9rem; }
+}

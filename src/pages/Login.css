@@ -1,0 +1,110 @@
+/* src/pages/Login.css */
+
+.login-container {
+    background-color: #5c0b0b; /* The deep maroon from your mockup */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 40px;
+    overflow: hidden;
+}
+
+.login-header {
+    text-align: center;
+    z-index: 2;
+    margin-bottom: 20px;
+}
+
+.login-logo {
+    height: 140px;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+}
+
+.login-title {
+    font-family: 'Cinzel Decorative', serif;
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 10px 0 0 0;
+    letter-spacing: 1px;
+}
+
+.login-card {
+    background-color: #f4faeb; /* The light mint/cream color of the card */
+    width: 90%;
+    max-width: 450px;
+    border-radius: 40px; /* Very round corners like the mockup */
+    padding: 30px 40px 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #000; /* Distinct dark border from the mockup */
+}
+
+.login-card-title {
+    font-family: 'Lora', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.login-form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.login-form-group label {
+    font-family: 'Lora', serif;
+    font-size: 1.8rem;
+    color: #000;
+}
+
+.login-form-group input {
+    width: 65%;
+    height: 40px;
+    border: 1px solid #999;
+    border-radius: 2px;
+    padding: 0 10px;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.login-form-group input:focus {
+    border-color: #5c0b0b;
+    box-shadow: 0 0 5px rgba(92, 11, 11, 0.3);
+}
+
+.forgot-pass {
+    text-align: right;
+    color: #5c0b0b;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+/* The bottom mandala graphic */
+.login-mandala {
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    max-width: 500px; /* Adjust based on your image size */
+    z-index: 1;
+    pointer-events: none; /* Prevents it from blocking clicks */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .login-title { font-size: 2.5rem; }
+    .login-form-group { flex-direction: column; align-items: flex-start; gap: 5px; }
+    .login-form-group input { width: 100%; }
+    .login-card { padding: 30px 20px; border-radius: 25px; }
+}
