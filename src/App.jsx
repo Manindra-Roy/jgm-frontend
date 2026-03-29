@@ -8,6 +8,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Certification from './pages/Certification'; // Import the new page
 import Footer from './components/Footer';
+import ProductDetails from './pages/ProductDetails';
+import Admin from './pages/Admin';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               {/* Add the Certification Route */}
               <Route path="/certification" element={<Certification />} />
+              <Route path="/product/:id" element={<ProductDetails />} />
+              <Route path="/admin" element={<Admin />} />
             </Routes>
           </div>
           <Footer />

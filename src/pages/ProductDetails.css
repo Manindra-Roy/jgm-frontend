@@ -1,0 +1,137 @@
+/* src/pages/ProductDetails.css */
+
+.details-page-container {
+    background-color: #FCF9E8; /* Signature cream */
+    min-height: 100vh;
+    padding: 120px 5% 100px; /* Extra top padding to clear the navbar */
+}
+
+.details-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 50px;
+    border-top: 8px solid #216f56; /* JGM Green */
+}
+
+/* Left Side: Image Gallery */
+.details-image-section {
+    background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.details-main-image {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+}
+
+/* Right Side: Product Info */
+.details-info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.details-title {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 2.8rem;
+    color: #4a0404; /* Deep maroon */
+    margin: 0 0 15px 0;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.details-price {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin: 0 0 25px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.details-tag {
+    background-color: #f1c40f; /* JGM Yellow */
+    color: #000;
+    font-size: 1rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.details-description {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Herbal Benefits List */
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+.benefits-list li {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #2d3748;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.benefit-icon {
+    color: #216f56;
+    font-size: 1.2rem;
+}
+
+/* Giant Order Button */
+.details-order-btn {
+    background: linear-gradient(180deg, #e74c3c 0%, #a93226 100%);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 10px 20px rgba(169, 50, 38, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 400px;
+}
+
+.details-order-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(169, 50, 38, 0.4);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 992px) {
+    .details-content { grid-template-columns: 1fr; padding: 30px; gap: 30px; }
+    .details-title { font-size: 2rem; }
+    .details-price { font-size: 1.8rem; }
+    .details-image-section { min-height: 300px; }
+}
